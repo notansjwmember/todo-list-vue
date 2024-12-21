@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-item {
+  @apply px-2 py-2 w-full text-left flex items-center leading-none gap-1.5 cursor-pointer transition-all duration-150 rounded-md hover:bg-slate-200;
+}
