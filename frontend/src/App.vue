@@ -1,30 +1,28 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="app" class="flex flex-col min-h-screen">
+    <div class="flex flex-grow">
+      <nav class="w-2/12 p-4 flex flex-col gap-4 bg-slate-50 text-slate-900">
+        <div class="flex items-center gap-2">
+          <IconPolygon size="36" />
+          <h1 class="font-black text-lg">Ta(sk)rub</h1>
+        </div>
+        <ul class="flex flex-col gap-1">
+          <router-link to="/">Dashboard</router-link>
+          <router-link to="/todos">Todos</router-link>
+        </ul>
+      </nav>
+      <div class="flex-grow">
+        <router-view></router-view>
+      </div>
+    </div>
+    <footer class="flex justify-center content-center p-1 bg-slate-900 text-slate-300">
+      <p>Made with &lt;3 by Caenar</p>
+    </footer>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script setup>
+import { IconPolygon } from "@tabler/icons-vue";
+</script>
+
+<style></style>
