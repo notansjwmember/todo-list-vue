@@ -2,9 +2,9 @@
   <div id="app" class="flex flex-col min-h-screen">
     <div class="flex flex-grow">
       <Sidebar />
-      <div class="flex-grow">
+      <main class="flex-grow p-3">
         <router-view></router-view>
-      </div>
+      </main>
     </div>
     <Footer />
   </div>

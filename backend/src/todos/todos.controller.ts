@@ -10,7 +10,7 @@ import {
 import { TodosService } from './todos.service';
 import { Todo } from './todos.model';
 
-@Controller('todos')
+@Controller('api/todos')
 export class TodosController {
   constructor(private readonly todosService: TodosService) {}
 
@@ -18,7 +18,7 @@ export class TodosController {
   async create(@Body() body: { title: string; content: string }) {
     try {
       const newTodo = await this.todosService.create(body.title, body.content);
-      return { data: newTodo };
+      return newTodo;
     } catch (error) {
       return { error: error.message };
     }
@@ -28,7 +28,7 @@ export class TodosController {
   async fetchAll() {
     try {
       const todos = await this.todosService.fetchAll();
-      return { data: todos };
+      return todos;
     } catch (error) {
       return { error: error.message };
     }
@@ -39,7 +39,7 @@ export class TodosController {
     try {
       const todo = await this.todosService.fetchOne(id);
 
-      return { data: todo };
+      return todo;
     } catch (error) {
       return { error: error.message };
     }
@@ -60,7 +60,7 @@ export class TodosController {
 
       const updatedTodo = await this.todosService.update(id, updates);
 
-      return { data: updatedTodo };
+      return updatedTodo;
     } catch (error) {
       return { error: error.message };
     }
@@ -71,7 +71,7 @@ export class TodosController {
     try {
       const deletedTodo = await this.todosService.delete(id);
 
-      return { data: deletedTodo };
+      return deletedTodo;
     } catch (error) {
       return { error: error.message };
     }

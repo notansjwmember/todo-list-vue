@@ -3,5 +3,10 @@ import "./style.css";
 
 import App from "./App.vue";
 import router from "./router";
+import vueQuery from "./plugins/vueQuery";
 
-createApp(App).use(router).mount("#app");
+const app = createApp(App);
+
+app.use(router);
+app.use(vueQuery);
+app.mount("#app");
