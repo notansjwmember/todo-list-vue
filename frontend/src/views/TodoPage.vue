@@ -67,6 +67,30 @@ const {
   </div>
 
   <Popup :isVisible="showPopup" @update:isVisible="showPopup = $event">
-    <h2 class="font-bold">Create a new Todo</h2>
+    <div class="flex flex-col gap-3">
+      <h2 class="font-bold">Create a new Todo</h2>
+      <form class="grid gap-3">
+        <div class="form-item">
+          <label for="">Name this task</label>
+          <input
+            type="text"
+            class="outline-none p-1.5 text-sm rounded-md bg-slate-50 border border-slate-300"
+          />
+        </div>
+        <div class="form-item">
+          <label for="">What is this task about?</label>
+          <textarea
+            class="outline-none p-1.5 text-sm rounded-md bg-slate-50 border border-slate-300 w-72 h-32 resize-none"
+          />
+        </div>
+        <div class="line"></div>
+        <div class="button-container">
+          <button type="button" @click="showPopup = false" class="secondary-btn">
+            Cancel
+          </button>
+          <button type="button" class="primary-btn">Continue</button>
+        </div>
+      </form>
+    </div>
   </Popup>
 </template>

@@ -4,32 +4,40 @@
 @tailwind components;
 @tailwind utilities;
 
+button {
+  font-size: 12px;
+  padding: 8px 10px;
+}
+
 .nav-item {
   @apply px-2 py-2 w-full text-left flex items-center leading-none gap-1.5 cursor-pointer transition-all duration-150 rounded-md hover:bg-slate-200;
 }
 
-@layer components {
-  .popup-scale {
-    @apply transform transition-transform duration-300 ease-in-out;
-  }
+.line {
+  @apply h-px w-full bg-gray-200;
+}
 
-  .popup-opacity {
-    @apply opacity-0 transition-opacity duration-300 ease-in-out;
-  }
+.form-item {
+  @apply flex flex-col gap-1;
+}
 
-  .popup-scale-enter {
-    @apply scale-90;
-  }
+label {
+  @apply text-sm;
+}
 
-  .popup-scale-leave {
-    @apply scale-100;
-  }
+.form-item > input,
+.form-item > textarea {
+  @apply border focus:border-indigo-400 transition-all;
+}
 
-  .popup-opacity-enter {
-    @apply opacity-100;
-  }
+.button-container {
+  @apply flex gap-1.5 justify-end;
+}
 
-  .popup-opacity-leave {
-    @apply opacity-0;
-  }
+.secondary-btn {
+  @apply flex items-center leading-none border border-indigo-500 text-indigo-500 rounded-md;
+}
+
+.primary-btn {
+  @apply flex items-center leading-none bg-indigo-500 text-slate-300 rounded-md;
 }
